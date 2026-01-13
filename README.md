@@ -13,7 +13,7 @@ This repository contains the containerized backend application **MuchTodo** and 
 
 ## Local Development (Docker Compose)
 
-
+```bash
 # Build and run containers
 docker-compose up --build -d
 
@@ -37,7 +37,7 @@ curl http://localhost:8080/health
 
 ## Cleanup
 ./scripts/k8s-cleanup.sh
-
+```
 ## Notes
 - **MongoDB Compatibility:** MongoDB container uses version 4.4 for broad CPU compatibility (AVX not required).
 - **Security:** Backend container configured with non-root user for security.
