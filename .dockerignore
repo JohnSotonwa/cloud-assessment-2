@@ -1,0 +1,30 @@
+# Go
+*.exe
+*.out
+muchtodo
+
+# Git
+.git
+.gitignore
+
+# Editor / OS files
+.vscode
+.idea
+*.swp
+*.log
+.DS_Store
+
+# Docker / Compose
+docker-compose.override.yml
+
+# Node / frontend (if any)
+node_modules
+
+.env
+node_modules/
+*.tar.gz
+evidence/
+kubernetes/
+
+# Test / coverage
+coverage
