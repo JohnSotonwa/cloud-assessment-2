@@ -13,7 +13,7 @@ This repository contains the containerized backend application **MuchTodo** and 
 
 ## Local Development (Docker Compose)
 
-```bash
+
 # Build and run containers
 docker-compose up --build -d
 
