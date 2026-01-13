@@ -1,0 +1,291 @@
+/* ============================== */
+/*            MAIN STYLES        */
+/* ============================== */
+
+/* Centered outer container for the calculator */
+.outer-box{
+  background-color: #242530;
+  height: 367px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+}
+
+/* Display screen area */
+.inner-box{
+  background-color: #3A3F77;
+  color: white;
+  box-sizing: border-box;
+  padding-right: 20px;
+  place-items: end;
+  align-content: center;
+  font-size: 18px;
+  width: 350px;
+  height: 70px;
+  margin-left: 25px;
+  margin-top: 25px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 4px #00000040;
+}
+
+/* Container for buttons below the display */
+.other-inner-box{
+  width: 350px;
+  height: 250px;
+  margin-left: 25px;
+  margin-top: 10px;
+  padding-left: -10px;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Make all buttons show pointer cursor */
+button {
+  cursor: pointer;
+}
+
+/* Grid layout for organizing buttons into two groups */
+.buttons{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 1fr 0.6fr;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+/* Left section of buttons (digits) in 3-column grid */
+.left-hand{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 13px;
+  row-gap: 10px;
+  height: 240px;
+  margin-left: 0px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Right section of buttons (operators) in 2-column grid */
+.right-hand{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 13px;
+  row-gap: 10px;
+  height: 240px;
+  margin-left: 0px;
+  margin-top: 7px;
+  margin-bottom: 10px;
+  align-content: center;
+  justify-content: center;
+}
+
+/* Digit button styles */
+.digits-section, #back-space{
+  display: grid;
+  background-color: #404258;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  place-items: center;
+  height: 50px;
+  width: 64px;
+  align-content: center;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px #00000040;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Digit button hover effect */
+.digits-section:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Operator button styles */
+.operations{
+  display: grid;
+  background-color: #F49D1A;
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  place-items: center;
+  height: 50px;
+  width: 50px;
+  justify-self: end;
+  align-content: center;
+  border-radius: 50px;
+  box-shadow: 0px 4px 4px #00000040;
+  cursor: pointer;
+}
+
+/* Special styling for previous operation display */
+#previous{
+  background-color: #B2B2B2;
+}
+
+/* Equals button styling */
+#equals{
+  display: grid;
+  font-size: 24px;
+  font-weight: 400;
+  place-items: center;
+  background-color: #B2B2B2;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 50px;
+  width: 113px;
+  border-radius: 25px;
+  box-shadow: 0px 4px 4px #00000040;
+  cursor: pointer;
+}
+
+/* Clear button default styling */
+#clear{
+  background-color: #B2B2B2;
+}
+
+/* Clear button when clicked */
+#clear.clicked{
+  font-size: 14px; /* New smaller size */
+  background-color: red;
+}
+
+/* ============================== */
+/*        RESPONSIVE STYLES      */
+/* ============================== */
+
+@media (max-width: 600px) {
+  .outer-box {
+    width: 64%;
+  }
+
+  .inner-box {
+    width: 90%;
+    margin-left: 16px;
+  }
+
+  .other-inner-box {
+    width: 80%;
+    margin-left: 73px;
+  }
+
+  .buttons {
+    width: 70%;
+  }
+
+  .digits-section,
+  .operations {
+    width: 45px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  #equals {
+    width: 100%;
+    height: 40px;
+    font-size: 20px;
+  }
+  #clear.clicked {
+  font-size: 12px;
+  background-color: red;
+}
+}
+
+@media (max-width: 480px) {
+  .outer-box {
+    width: 70%;
+    height: 305px;
+  }
+
+  .inner-box {
+    width: 86%;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .other-inner-box {
+    width: 80%;
+    margin-left: 90px;
+    margin-top: 0px;
+  }
+
+  .buttons {
+    width: 50%;
+  }
+
+  .digits-section,
+  .operations {
+    width: 40px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  #equals {
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  #clear.clicked {
+    font-size: 12px;
+  }
+
+  .left-hand,
+  .right-hand {
+    margin-top: -10px;
+  }
+}
+
+@media (max-width: 411px),
+       (max-width: 391px),
+       (max-width: 376px) {
+  .outer-box {
+    width: 80%;
+    height: 320px;
+  }
+
+  .inner-box {
+    width: 86%;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+
+  .other-inner-box {
+    width: 80%;
+    margin-left: 90px;
+    margin-top: 10px;
+  }
+
+  .buttons {
+    width: 50%;
+  }
+
+  .digits-section,
+  .operations {
+    width: 40px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  #equals {
+    width: 100%;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  #clear.clicked {
+    font-size: 12px;
+  }
+
+  .left-hand,
+  .right-hand {
+    margin-top: -10px;
+  }
+}
+
